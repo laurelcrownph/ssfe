@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  NavLink,
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+
+import Advisors from './components/Advisors';
+import Logs from './components/Logs';
+import Units from './components/Units';
+import Reports from './components/Reports';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <h1>FINT</h1>
+        <ul className="header">
+          <li><NavLink to="/">Transactions</NavLink></li>
+          <li><NavLink to="/units">Peers</NavLink></li>
+          <li><NavLink to="/advisors">Notaries</NavLink></li>
+          <li><NavLink to="/reports">Reports</NavLink></li>
+          <li><NavLink to="/clients">Clients</NavLink></li>
+          <li><NavLink to="/logs">Logs</NavLink></li>
+        </ul>
+        <Routes>
+          <Route path="/" element={<Advisors />} />
+          <Route path="/logs" element={<Logs />} />
+          <Route path="/advisors" element={<Advisors />} />
+          <Route path="/units" element={<Units />} />
+          <Route path="/reports" element={<Reports />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

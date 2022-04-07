@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  fint-fe:
+    container_name: fint-fe
+    restart: always
+    build: 
+      context: .
+    image: fint:1.0.0
+    ports:
+      - "3008:80"
+      - "3009:443"

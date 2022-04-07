@@ -5,9 +5,145 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 20px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+ul.header {
+  background-color: #ffcb05;
+  padding: 0;
+}
+ul.header li a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #ffcb05;
+  border: 1px solid white;
+  text-align: center;
+  padding: 8px;
+}
+
+td {
+  border: 1px solid #ffcb05;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #ffcb05;
+}
+
+.container {
+  padding: 40px;
+}
+
+.input_margin {
+  margin-right: 20px;
+}
+
+.btn_container_padding {
+  padding: 10px;
+}
+
+.btn {
+  width: 180px;
+  height: 40px;
+  position: relative;
+  margin: 30px auto;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color: #ffcb05;
+  color: black;  
+  font-weight: bold;
+  transition: background-color .3s;
+  margin-right: 30px;
+}
+
+.btn:hover, .btn:focus {
+  color: #ffcb05 !important;
+  background-color: black;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.input_text {
+  width: 50%;
+  padding: 15px;
+  margin:  20px;
+  border: none;
+  border: 2px solid #0D546B;
+  background: transparent;
+  border-radius: 1px;
+  color: black;
+}
+
+.select {
+  width: 420px;
+  height: 50%;
+  background-color: white;
+  color: black;
+  position: relative;
+  font-size: 12px;
+  border: 2px solid #ffcb05;
+  padding: 15px;
+}
+
+.align_center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
