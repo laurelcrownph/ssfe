@@ -11,17 +11,13 @@ export default function Advisors() {
     const filter_labels = [
         {
             key: 'coding_date',
-            name: 'Coding Date',
+            name: 'Transaction Date',
             type: 'date'
         },
         {
             key: 'unit_name',
-            name: 'Unit Name',
-            type: 'select',
-            options: [
-                "Test Unit Name",
-                "Akua"
-            ]
+            name: 'Transaction Item',
+            type: 'text',
         },
         {
             key: 'position',
@@ -334,11 +330,11 @@ export default function Advisors() {
     return (
         <>
             <div className="container">
-                <h1>Advisors</h1>
+                <h1>Transactions</h1>
                 <div className='btn_container_padding'>
-                    <NewModal type={"advisor"}
-                        header_name={"Add a new app to an Advisor"}
-                        button_name={"New App"}
+                    <NewModal type={"Transactions"}
+                        header_name={"Add new Transaction"}
+                        button_name={"New Transaction"}
                         btn_trigger_name={"Create"}
                         fields={new_app_fields}
                         data={data}

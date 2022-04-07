@@ -19,7 +19,7 @@ ul.header li {
   margin: 0;
 }
 ul.header {
-  background-color: #ffcb05;
+  background-color: #9058FC;
   padding: 0;
 }
 ul.header li a {
@@ -37,20 +37,20 @@ table {
 }
 
 th {
-  background-color: #ffcb05;
+  background-color: #9058FC;
   border: 1px solid white;
   text-align: center;
   padding: 8px;
 }
 
 td {
-  border: 1px solid #ffcb05;
+  border: 1px solid #9058FC;
   text-align: center;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #ffcb05;
+  background-color: #9058FC;
 }
 
 .container {
@@ -76,7 +76,7 @@ tr:nth-child(even) {
   outline: none;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-  background-color: #ffcb05;
+  background-color: #9058FC;
   color: black;  
   font-weight: bold;
   transition: background-color .3s;
@@ -84,7 +84,7 @@ tr:nth-child(even) {
 }
 
 .btn:hover, .btn:focus {
-  color: #ffcb05 !important;
+  color: #9058FC !important;
   background-color: black;
   cursor: pointer;
 }
@@ -138,7 +138,7 @@ tr:nth-child(even) {
   color: black;
   position: relative;
   font-size: 12px;
-  border: 2px solid #ffcb05;
+  border: 2px solid #9058FC;
   padding: 15px;
 }
 
