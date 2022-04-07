@@ -5,6 +5,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import logo from './logo.png';
 
 import Advisors from './components/Advisors';
 import Logs from './components/Logs';
@@ -15,7 +16,8 @@ function App() {
   return (
     <Router>
       <div>
-        <h1>FINT</h1>
+        <img src={logo} alt="My logo" class="App-logo"/>
+        
         <ul className="header">
           <li><NavLink to="/">Transactions</NavLink></li>
           <li><NavLink to="/units">Peers</NavLink></li>

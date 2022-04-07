@@ -20,42 +20,13 @@ export default function Advisors() {
             type: 'text',
         },
         {
-            key: 'position',
-            name: 'Position',
-            type: 'select',
-            options: [
-                POSITIONS.ADVISOR,
-                POSITIONS.MANAGER_CANDIDATE,
-                POSITIONS.UNIT_MANAGER,
-                POSITIONS.SALES_MANAGER,
-                POSITIONS.BRANCH_MANAGER
-            ]
-        }, 
-        {
-            key: 'awards',
-            name: 'Awards',
-            type: 'select',
-            options: [
-                POSITIONS.ADVISOR,
-                POSITIONS.MANAGER_CANDIDATE,
-                POSITIONS.UNIT_MANAGER,
-                POSITIONS.SALES_MANAGER,
-                POSITIONS.BRANCH_MANAGER
-            ]
-        },    
-        {
-            key: 'advisor_code',
-            name: 'Advisor Code',
-            type: 'text'
-        },
-        {
-            key: 'first_name',
-            name: 'First Name',
+            key: 'last_name',
+            name: 'Lender',
             type: 'text'
         },
         {
             key: 'last_name',
-            name: 'Last Name',
+            name: 'Borrower',
             type: 'text'
         }
     ]
@@ -145,16 +116,11 @@ export default function Advisors() {
     ]
 
     const header_names = [
-        'Unit Name',
-        'Code',
-        'Coding Date',
-        'First Name',
-        'Last Name',
-        'Position',
-        'Awards',
-        'Total Apps',
-        'Total AC',
-        'Total NSC'
+        'Transaction ID',
+        'Transaction Date',
+        'Lender',
+        'Borrower'
+        
     ];
 
     const headers = header_names.map(header =>
