@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
-import useGetAdvisors from '../hooks/useGetAdvisors'
+import useGetStates from '../hooks/useGetStates'
 import NewModal from './NewModal';
 import { MODE_OF_PAYMENT,APP_TYPE,TIMEZONE, POSITIONS } from '../constants';
-import SunSwiftService from '../SunSwiftService';
 
-export default function Advisors() {
+export default function States() {
 
-    let [advisors,setAdvisors] = useState([]);
-
+    const states = useGetStates();
     const filter_labels = [
         {
             key: 'coding_date',
-            name: 'Coding Date',
+            name: 'Transaction Date',
             type: 'date'
         },
         {
             key: 'unit_name',
-            name: 'Unit Name',
-            type: 'select',
-            options: [
-                "Test Unit Name",
-                "Akua"
-            ]
+            name: 'Transaction Item',
+            type: 'text',
         },
         {
             key: 'position',
@@ -149,16 +143,10 @@ export default function Advisors() {
     ]
 
     const header_names = [
-        'Unit Name',
-        'Code',
-        'Coding Date',
-        'First Name',
-        'Last Name',
-        'Position',
-        'Awards',
-        'Total Apps',
-        'Total AC',
-        'Total NSC'
+        'Transaction ID',
+        'Lender',
+        'Borrower',
+        'Value'
     ];
 
     const headers = header_names.map(header =>
@@ -183,18 +171,22 @@ export default function Advisors() {
         last_name: filters.last_name,
     }
 
-    let rows = advisors.map(advisor =>
-        <tr key={advisor.advisor_code}>
-            <td>{advisor.unit_name}</td>
-            <td>{advisor.advisor_code}</td>
-            <td>{advisor.coding_date}</td>
-            <td>{advisor.first_name}</td>
-            <td>{advisor.last_name}</td>
-            <td>{advisor.position.split("_").join(" ")}</td>
-            <td>{advisor.awards.join(",")}</td>
-            <td>{advisor.apps.length}</td>
+    console.log(states)
+    let rows = states.map(transaction =>
+        <tr key={transaction.ref.txhash}>
+            <td>{transaction.ref.txhash}</td>
+            <td>{transaction.state.data.lender}</td>
+            <td>{transaction.state.data.borrower}</td>
+            <td>{transaction.state.data.value}</td>
         </tr>
     )
+
+    // let rows = states.map(advisor =>
+    //     <tr key="test">
+    //         <td>"test"</td>
+    //     </tr>
+    // )
+
 
     let [app_inputs, setInputs] = useState({
         advisor_code: "",
@@ -308,15 +300,6 @@ export default function Advisors() {
         )
     }
 
-    function filterAdvisors() {
-        SunSwiftService.getAdvisors(query_params)
-            .then(
-                response => {
-                    setAdvisors(response.data)
-                }
-            )
-    }
-
     function handleChange(event) {
         if (event.target.id === 'mode_of_payment') {
             setInputs(inputs => ({ ...inputs, [event.target.id]: document.getElementById("mode_of_payment").value }));
@@ -334,21 +317,21 @@ export default function Advisors() {
     return (
         <>
             <div className="container">
-                <h1>Advisors</h1>
+                <h1>States</h1>
                 <div className='btn_container_padding'>
-                    <NewModal type={"advisor"}
-                        header_name={"Add a new app to an Advisor"}
-                        button_name={"New App"}
+                    <NewModal type={"States"}
+                        header_name={"Add new Transaction"}
+                        button_name={"New Transaction"}
                         btn_trigger_name={"Create"}
                         fields={new_app_fields}
                         data={data}
                         advisor_code={app_inputs.advisor_code} />
                 </div>
-                <h2>Filter By</h2>
+                {/* <h2>Filter By</h2>
                 <div className="filter">
                     {filter_fields}
                 </div>
-                <button className='btn' onClick={filterAdvisors}>SEARCH</button>   
+                <button className='btn' onClick={filterStates}>SEARCH</button>    */}
                 <table>
                     <thead>
                         <tr>

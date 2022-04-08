@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { POSITIONS } from '../constants';
-import useGetUnits from '../hooks/useGetUnits';
+import useGetIOUs from '../hooks/useGetIOUs';
 import NewModal from './NewModal';
 
 export default function Units() {
@@ -39,7 +39,7 @@ export default function Units() {
         }
     ]
 
-    let rows = useGetUnits().map((unit, index) =>
+    let rows = useGetIOUs().map((unit, index) =>
         <tr key={index}>
             <td>{unit.unit_name}</td>
             <td>{unit.manager}</td>

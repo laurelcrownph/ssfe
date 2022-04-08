@@ -1,24 +1,24 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import SunSwiftService from '../SunSwiftService';
+import CordaSerivce from '../services/CordaService';
 import '../css/NewModal.css'
 
 export default function NewModal(props) {
 
     
     function createUnit() {
-        SunSwiftService.createUnit(props.data).then(
+        CordaSerivce.createIOU(props.data).then(
             response => {
                 
             }
         ).catch(error => {
 
         })
-        alert('Sign Up Successfully!');
+        alert('Transaction Created!');
     }
 
     function createApp() {
-        SunSwiftService.createApp(props.advisor_code,props.data).then(
+        CordaSerivce.createApp(props.advisor_code,props.data).then(
             response => {
                 
             }
@@ -29,15 +29,9 @@ export default function NewModal(props) {
     }
 
     function getButton() {
-        let button = null;
-        if (props.type === "unit") {
-            button = <button className="btn" onClick={createUnit}>{props.btn_trigger_name}</button>
-        } else if (props.type === "advisor") {
-            button = <button className="btn" onClick={createApp}>{props.btn_trigger_name}</button>
-        }
         return (
             <>
-                {button}
+                <button className="btn" onClick={createUnit}>{props.btn_trigger_name}</button>
             </>
         )
     }

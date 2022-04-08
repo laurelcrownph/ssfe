@@ -5,31 +5,21 @@ import {
   Route,
   Routes
 } from "react-router-dom";
+import logo from './logo.png';
 
-import Advisors from './components/Advisors';
-import Logs from './components/Logs';
-import Units from './components/Units';
-import Reports from './components/Reports';
+import Transactions from './components/Transactions';
+import States from './components/States';
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>FINT</h1>
-        <ul className="header">
-          <li><NavLink to="/">Transactions</NavLink></li>
-          <li><NavLink to="/units">Peers</NavLink></li>
-          <li><NavLink to="/advisors">Notaries</NavLink></li>
-          <li><NavLink to="/reports">Reports</NavLink></li>
-          <li><NavLink to="/clients">Clients</NavLink></li>
-          <li><NavLink to="/logs">Logs</NavLink></li>
-        </ul>
+          <img src={logo} alt="FINT Logo" class="App-logo"/>
+          <ul className="header">
+            <li><NavLink to="/">Transactions</NavLink></li>
+          </ul>
         <Routes>
-          <Route path="/" element={<Advisors />} />
-          <Route path="/logs" element={<Logs />} />
-          <Route path="/advisors" element={<Advisors />} />
-          <Route path="/units" element={<Units />} />
-          <Route path="/reports" element={<Reports />} />
+          <Route path="/" element={<Transactions />} /> 
         </Routes>
       </div>
     </Router>

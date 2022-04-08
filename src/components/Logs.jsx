@@ -1,8 +1,8 @@
 import React from 'react';
-import useGetLogs from '../hooks/useGetLogs';
+import useGetIOUs from '../hooks/useGetIOUs';
 
 export default function Logs() {
-    let logs = useGetLogs();
+    let logs = useGetIOUs();
     
     const header_names = [
         'Log Date',
