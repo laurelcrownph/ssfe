@@ -8,20 +8,24 @@ import {
 import logo from './logo.png';
 
 import Transactions from './components/Transactions';
-import States from './components/States';
+import Units from './components/Units';
+import MUIDrawer from './components/MUIDrawer'
+import Box from '@mui/material/Box';
 
 function App() {
   return (
     <Router>
-      <div>
-          <img src={logo} alt="FINT Logo" class="App-logo"/>
-          <ul className="header">
-            <li><NavLink to="/">Transactions</NavLink></li>
-          </ul>
+      <Box sx={{display: 'flex'}}>
+        <MUIDrawer/>
+        {/* <img src={logo} alt="FINT Logo" class="App-logo"/>
+        <ul className="header">
+          <li><NavLink to="/">Transactions</NavLink></li>
+        </ul> */}
         <Routes>
           <Route path="/" element={<Transactions />} /> 
+          <Route path="/peers" element={<Units />} /> 
         </Routes>
-      </div>
+      </Box>
     </Router>
   );
 }
